@@ -1,0 +1,33 @@
+{
+  "name": "smart-contract-library-server",
+  "version": "1.0.0",
+  "description": "socket implementation for the smart contract library",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:prod": "node src/server.js",
+    "start:dev": "nodemon src/server.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-es6": "^1.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "express": "^4.21.0",
+    "handlebars": "^4.7.8",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8",
+    "utf-8-validate": "^6.0.4"
+  }
+}

@@ -1,0 +1,9 @@
+.env
+.vscode
+*.swp
+coverage
+logs/
+log/
+dump.rdb
+.dccache
+node_modules
