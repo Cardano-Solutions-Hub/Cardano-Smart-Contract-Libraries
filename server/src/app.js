@@ -64,6 +64,7 @@ io.on('connection', async (socket) => {
     });
   } catch (error) {
     console.error(error);
+    socket.emit('error', { message: 'Error occurred' });
   }
 
   socket.on('disconnect', () => {

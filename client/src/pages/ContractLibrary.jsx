@@ -61,6 +61,7 @@ function ContractLibrary() {
   const [code, setCode] = useState("");
   const [socket, setSocket] = useState(null);
   const [parameters, setParameters] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleContractChange = (value) => {
     setSelectedContract(value);
@@ -86,6 +87,12 @@ function ContractLibrary() {
     // Listen for code updates from the server
     newSocket.on("codeUpdate", (updatedCode) => {
       setCode(updatedCode); // Update the code state with the new data
+    });
+
+    // Listen for error events
+    newSocket.on("error", (error) => {
+      console.error("Error received:", error);
+      setErrorMessage("Error Occured Please Refresh"); // Store error message in state
     });
 
     return () => {
@@ -119,6 +126,12 @@ function ContractLibrary() {
     <>
       <NavBar />
       <main className="mt-16 px-0 sm:px-28 pb-8 w-full">
+        {/* Display error message if exists */}
+        {errorMessage && (
+          <div className="bg-red-500 text-white p-3 rounded mb-4">
+            ⚠️ {errorMessage}
+          </div>
+        )}
         <ContractList
           contracts={contracts}
           handleContractChange={handleContractChange}
