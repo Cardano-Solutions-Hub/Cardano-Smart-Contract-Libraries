@@ -16,7 +16,7 @@ function NavBar() {
     { lable: "Home", link: "/" },
     { label: "Contract Library", link: "/contract-library" },
     { label: "Documentation", link: "/documentation" },
-    { label: "Help?", link: "#" },
+    { label: "Help?", link: "/help" },
   ];
 
   return (
@@ -49,7 +49,7 @@ function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#" className="text-black">
+          <Link href="/help" className="text-black">
             Help?
           </Link>
         </NavbarItem>

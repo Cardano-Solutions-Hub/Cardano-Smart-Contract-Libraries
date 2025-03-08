@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 console.log('Trying to connect to WebSocket server');
 
 // Connect to the WebSocket server
-const socket = io('http://127.0.0.1:5000');
+const socket = io('ws://100.67.47.42:5006?EIO=4&transport=websocket');
 
 // Listen for connection
 socket.on('connect', () => {
@@ -17,12 +17,14 @@ socket.on('connect', () => {
     scriptName: 'script',
   };
 
+  socket.emit('codeUpdate', JSON.stringify(data));
+
   // Listen for server response (optional)
   socket.on('initial', (code) => {
     console.log('Initial smart contract:', code);
   });
 
-  socket.emit('codeUpdate', data);
+  // socket.emit('codeUpdate', data);
 
   // listen for code update
   socket.on('codeUpdate', (code) => {

@@ -11,7 +11,7 @@ const initialSetup = async () => {
   // setup initial contract directory
   const initialFolderUrl = path.resolve(
     __dirname,
-    '../../../Smart_Contract_Library/NFT/src/NFT/NFT.hs',
+    '../../../Smart_Contract_Library/Nft/src/Nft/Nft.hs',
   );
 
   try {

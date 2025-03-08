@@ -4,6 +4,7 @@ import ContractList from "../components/ContractList";
 import ContractCode from "../components/ContractCode";
 import { useState, useEffect } from "react";
 import io from "socket.io-client";
+import URL from "../../constants";
 
 function ContractLibrary() {
   const contracts = [
@@ -72,7 +73,7 @@ function ContractLibrary() {
   };
 
   useEffect(() => {
-    const newSocket = io("http://172.26.8.97:5000", {
+    const newSocket = io(URL, {
       transports: ["websocket"],
       withCredentials: false,
     });

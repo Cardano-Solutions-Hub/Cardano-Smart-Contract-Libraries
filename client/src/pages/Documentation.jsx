@@ -7,12 +7,13 @@ import Result from "../components/Result";
 import { FiPlayCircle } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
+import URL from "../../constants";
 
 function Documentation() {
   const [code, setCode] = useState([]);
 
   useEffect(() => {
-    const newSocket = io("http://172.26.8.97:5000", {
+    const newSocket = io(URL, {
       transports: ["websocket"],
       withCredentials: false,
     });
