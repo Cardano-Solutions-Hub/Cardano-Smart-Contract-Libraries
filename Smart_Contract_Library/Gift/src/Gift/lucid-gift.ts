@@ -37,7 +37,7 @@ const giftAddress: Address = lucid.utils.validatorToAddress(giftScript);
 async function gift(amount: bigint): Promise<TxHash> {
   const tx = await lucid
     .newTx()
-    .payToContract(giftAddress, { lovelace: amount })
+    .payToContract(giftAddress, { lovelace: {{amount}} })
     .complete();
   const signedTx = await tx.sign().complete();
   const txHash = await signedTx.submit();

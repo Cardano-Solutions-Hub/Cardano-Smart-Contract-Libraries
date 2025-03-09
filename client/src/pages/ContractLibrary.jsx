@@ -51,7 +51,7 @@ function ContractLibrary() {
       value: "Gift",
       parameters: {
         onchain: [{ name: "Script Name", key: "scriptName" }],
-        offchain: [{}],
+        offchain: [{ name: "Amount", key: "amount" }],
       },
     },
   ];
