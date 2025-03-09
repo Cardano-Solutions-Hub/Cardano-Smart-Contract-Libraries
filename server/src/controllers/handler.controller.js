@@ -103,7 +103,7 @@ export const giftContractController = async (socket, data) => {
       scriptName: data.scriptName,
     };
   } else if (type === 'offchain') {
-    context = {};
+    context = { amount: data.amount };
   }
 
   try {
