@@ -12,7 +12,7 @@ export const burnContractController = async (socket, data) => {
   if (type === 'onchain') {
     context = { error: data.error, scriptName: data.scriptName };
   } else if (type === 'offchain') {
-    context = {};
+    context = { amount: data.amount };
   }
 
   try {

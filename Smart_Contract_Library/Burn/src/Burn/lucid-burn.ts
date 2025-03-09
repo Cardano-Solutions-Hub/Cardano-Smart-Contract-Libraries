@@ -37,7 +37,7 @@ const burnAddress: Address = lucid.utils.validatorToAddress(burnScript);
 async function burn(amount: bigint): Promise<TxHash> {
   const tx = await lucid
     .newTx()
-    .payToContract(burnAddress, { lovelace: amount })
+    .payToContract(burnAddress, { lovelace: {{amount}} })
     .complete();
   const signedTx = await tx.sign().complete();
   const txHash = await signedTx.submit();

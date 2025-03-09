@@ -42,7 +42,7 @@ function ContractLibrary() {
           { name: "Error", key: "error" },
           { name: "Script Name", key: "scriptName" },
         ],
-        offchain: [{}],
+        offchain: [{ name: "Amount", key: "amount" }],
       },
     },
     {
